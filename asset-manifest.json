@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/emoji-communicator/static/css/main.bc5598f6.chunk.css",
-    "main.js": "/emoji-communicator/static/js/main.5947fbed.chunk.js",
-    "main.js.map": "/emoji-communicator/static/js/main.5947fbed.chunk.js.map",
+    "main.css": "/emoji-communicator/static/css/main.eb38e3f8.chunk.css",
+    "main.js": "/emoji-communicator/static/js/main.8693b7da.chunk.js",
+    "main.js.map": "/emoji-communicator/static/js/main.8693b7da.chunk.js.map",
     "runtime-main.js": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js",
     "runtime-main.js.map": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js.map",
     "static/js/2.24c17ccc.chunk.js": "/emoji-communicator/static/js/2.24c17ccc.chunk.js",
     "static/js/2.24c17ccc.chunk.js.map": "/emoji-communicator/static/js/2.24c17ccc.chunk.js.map",
     "index.html": "/emoji-communicator/index.html",
-    "precache-manifest.063161c85decd24b8855b1598038d05d.js": "/emoji-communicator/precache-manifest.063161c85decd24b8855b1598038d05d.js",
+    "precache-manifest.f58317273e2f1ae85cc60d058350a887.js": "/emoji-communicator/precache-manifest.f58317273e2f1ae85cc60d058350a887.js",
     "service-worker.js": "/emoji-communicator/service-worker.js",
-    "static/css/main.bc5598f6.chunk.css.map": "/emoji-communicator/static/css/main.bc5598f6.chunk.css.map",
+    "static/css/main.eb38e3f8.chunk.css.map": "/emoji-communicator/static/css/main.eb38e3f8.chunk.css.map",
     "static/js/2.24c17ccc.chunk.js.LICENSE.txt": "/emoji-communicator/static/js/2.24c17ccc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ed2d8a21.js",
     "static/js/2.24c17ccc.chunk.js",
-    "static/css/main.bc5598f6.chunk.css",
-    "static/js/main.5947fbed.chunk.js"
+    "static/css/main.eb38e3f8.chunk.css",
+    "static/js/main.8693b7da.chunk.js"
   ]
 }
