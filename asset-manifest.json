@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/emoji-communicator/static/css/main.eb38e3f8.chunk.css",
-    "main.js": "/emoji-communicator/static/js/main.8693b7da.chunk.js",
-    "main.js.map": "/emoji-communicator/static/js/main.8693b7da.chunk.js.map",
+    "main.js": "/emoji-communicator/static/js/main.6cafe090.chunk.js",
+    "main.js.map": "/emoji-communicator/static/js/main.6cafe090.chunk.js.map",
     "runtime-main.js": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js",
     "runtime-main.js.map": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js.map",
     "static/js/2.24c17ccc.chunk.js": "/emoji-communicator/static/js/2.24c17ccc.chunk.js",
     "static/js/2.24c17ccc.chunk.js.map": "/emoji-communicator/static/js/2.24c17ccc.chunk.js.map",
     "index.html": "/emoji-communicator/index.html",
-    "precache-manifest.f58317273e2f1ae85cc60d058350a887.js": "/emoji-communicator/precache-manifest.f58317273e2f1ae85cc60d058350a887.js",
+    "precache-manifest.abe9c8cf3f371c5bea6249a34c72df55.js": "/emoji-communicator/precache-manifest.abe9c8cf3f371c5bea6249a34c72df55.js",
     "service-worker.js": "/emoji-communicator/service-worker.js",
     "static/css/main.eb38e3f8.chunk.css.map": "/emoji-communicator/static/css/main.eb38e3f8.chunk.css.map",
     "static/js/2.24c17ccc.chunk.js.LICENSE.txt": "/emoji-communicator/static/js/2.24c17ccc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ed2d8a21.js",
     "static/js/2.24c17ccc.chunk.js",
     "static/css/main.eb38e3f8.chunk.css",
-    "static/js/main.8693b7da.chunk.js"
+    "static/js/main.6cafe090.chunk.js"
   ]
 }
