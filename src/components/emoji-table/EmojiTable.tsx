@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { findFirstThuethyItem } from '../../util/array/findFirstTruethyItem';
 import { Emoji } from '../../util/emoji/emoji.type';
 import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
@@ -15,11 +16,51 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   }, [setFullscreenEmoji]);
 
   useEffect(() => {
-    if (!!fullscreenEmoji) {
+    const { pathname } = window.location;
+
+    if (pathname !== '/') {
+      const pathnameFragments = pathname.split('/');
+      if (pathnameFragments.length) {
+        const possibleEmojiId = findFirstThuethyItem(pathnameFragments);
+        const emojiToPreselect = emojies.find(
+          (emoji) => emoji.id === possibleEmojiId
+        );
+
+        if (emojiToPreselect) {
+          setFullscreenEmoji(emojiToPreselect);
+        } else {
+          window.history.pushState(null, 'Emoji overview shown', '/');
+        }
+      }
+    }
+  }, [emojies]);
+
+  useEffect(() => {
+    if (fullscreenEmoji) {
       document.body.style.overflow = 'hidden';
+      window.history.pushState(
+        null,
+        `Emoji ${fullscreenEmoji.id} shown`,
+        `/${fullscreenEmoji.id}`
+      );
     } else {
       document.body.style.overflow = 'auto';
+      window.history.pushState(null, 'Emoji overview shown', '/');
     }
+
+    const popStateHandler = (e: PopStateEvent) => {
+      if (fullscreenEmoji) {
+        setFullscreenEmoji(null);
+      } else {
+        window.history.back();
+      }
+    };
+
+    window.addEventListener('popstate', popStateHandler);
+
+    return () => {
+      window.removeEventListener('popstate', popStateHandler);
+    };
   }, [fullscreenEmoji]);
 
   return (
