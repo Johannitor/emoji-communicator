@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { findLastThuethyItem } from '../../util/array/findLastTruethyItem';
 import { Emoji } from '../../util/emoji/emoji.type';
 import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
@@ -10,42 +9,21 @@ type EmojiTableProps = {
 
 export function EmojiTable({ emojies }: EmojiTableProps) {
   const [fullscreenEmoji, setFullscreenEmoji] = useState<Emoji | null>(null);
-  const [basePath, setBasePath] = useState<string>('/');
 
   const onDialogClose = useCallback(() => {
     setFullscreenEmoji(null);
   }, [setFullscreenEmoji]);
 
   useEffect(() => {
-    const { pathname } = window.location;
-
-    const pathnameFragments = pathname.split('/');
-    if (pathnameFragments.length) {
-      const possibleEmojiId = findLastThuethyItem(pathnameFragments);
-      const emojiToPreselect = emojies.find(
-        (emoji) => emoji.id === possibleEmojiId
-      );
-
-      if (emojiToPreselect) {
-        setFullscreenEmoji(emojiToPreselect);
-      } else {
-        setBasePath(pathname);
-        window.history.pushState(null, 'Emoji overview shown', pathname);
-      }
-    }
-  }, [emojies]);
-
-  useEffect(() => {
     if (fullscreenEmoji) {
       document.body.style.overflow = 'hidden';
       window.history.pushState(
         null,
-        `Emoji ${fullscreenEmoji.id} shown`,
-        `${basePath}/${fullscreenEmoji.id}`
+        'Emoji fullscreen open',
+        window.location.pathname
       );
     } else {
       document.body.style.overflow = 'auto';
-      window.history.pushState(null, 'Emoji overview shown', basePath);
     }
 
     const popStateHandler = (e: PopStateEvent) => {
@@ -61,7 +39,7 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
     return () => {
       window.removeEventListener('popstate', popStateHandler);
     };
-  }, [fullscreenEmoji, basePath]);
+  }, [fullscreenEmoji]);
 
   return (
     <>
