@@ -8,9 +8,9 @@ export function WebInstallPrompt() {
     handleWebInstallAccepted,
   ] = useWebInstallPrompt();
 
-  // if (!webInstallPrompt) {
-  //   return null;
-  // }
+  if (!webInstallPrompt) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-4 right-4">
