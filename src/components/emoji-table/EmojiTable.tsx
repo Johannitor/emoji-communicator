@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { findFirstThuethyItem } from '../../util/array/findFirstTruethyItem';
+import { findLastThuethyItem } from '../../util/array/findLastTruethyItem';
 import { Emoji } from '../../util/emoji/emoji.type';
 import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
@@ -10,6 +10,7 @@ type EmojiTableProps = {
 
 export function EmojiTable({ emojies }: EmojiTableProps) {
   const [fullscreenEmoji, setFullscreenEmoji] = useState<Emoji | null>(null);
+  const [basePath, setBasePath] = useState<string>('/');
 
   const onDialogClose = useCallback(() => {
     setFullscreenEmoji(null);
@@ -18,19 +19,18 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   useEffect(() => {
     const { pathname } = window.location;
 
-    if (pathname !== '/') {
-      const pathnameFragments = pathname.split('/');
-      if (pathnameFragments.length) {
-        const possibleEmojiId = findFirstThuethyItem(pathnameFragments);
-        const emojiToPreselect = emojies.find(
-          (emoji) => emoji.id === possibleEmojiId
-        );
+    const pathnameFragments = pathname.split('/');
+    if (pathnameFragments.length) {
+      const possibleEmojiId = findLastThuethyItem(pathnameFragments);
+      const emojiToPreselect = emojies.find(
+        (emoji) => emoji.id === possibleEmojiId
+      );
 
-        if (emojiToPreselect) {
-          setFullscreenEmoji(emojiToPreselect);
-        } else {
-          window.history.pushState(null, 'Emoji overview shown', '/');
-        }
+      if (emojiToPreselect) {
+        setFullscreenEmoji(emojiToPreselect);
+      } else {
+        setBasePath(pathname);
+        window.history.pushState(null, 'Emoji overview shown', pathname);
       }
     }
   }, [emojies]);
@@ -41,11 +41,11 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
       window.history.pushState(
         null,
         `Emoji ${fullscreenEmoji.id} shown`,
-        `/${fullscreenEmoji.id}`
+        `${basePath}/${fullscreenEmoji.id}`
       );
     } else {
       document.body.style.overflow = 'auto';
-      window.history.pushState(null, 'Emoji overview shown', '/');
+      window.history.pushState(null, 'Emoji overview shown', basePath);
     }
 
     const popStateHandler = (e: PopStateEvent) => {
@@ -61,7 +61,7 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
     return () => {
       window.removeEventListener('popstate', popStateHandler);
     };
-  }, [fullscreenEmoji]);
+  }, [fullscreenEmoji, basePath]);
 
   return (
     <>
