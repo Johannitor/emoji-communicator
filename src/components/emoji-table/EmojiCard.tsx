@@ -16,7 +16,7 @@ export function EmojiCard({ emoji, onClick }: EmojiCardProps) {
           onClick(emoji);
         }}>
         <DisplayEmoji emoji={emoji} className="pb-8 h-full" />
-        <span className="font-semibold text-gray-600 text-sm absolute bottom-2">
+        <span className="font-semibold text-gray-600 text-sm absolute bottom-2 truncate max-w-full px-2">
           {emoji.id}
         </span>
       </button>
