@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { findFirstThuethyItem } from '../../util/array/findFirstTruethyItem';
 import { Emoji } from '../../util/emoji/emoji.type';
 import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
@@ -13,6 +14,26 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   const onDialogClose = useCallback(() => {
     setFullscreenEmoji(null);
   }, [setFullscreenEmoji]);
+
+  useEffect(() => {
+    const { pathname } = window.location;
+
+    if (pathname !== '/') {
+      const pathnameFragments = pathname.split('/');
+      if (pathnameFragments.length) {
+        const possibleEmojiId = findFirstThuethyItem(pathnameFragments);
+        const emojiToPreselect = emojies.find(
+          (emoji) => emoji.id === possibleEmojiId
+        );
+
+        if (emojiToPreselect) {
+          setFullscreenEmoji(emojiToPreselect);
+        } else {
+          window.history.pushState(null, 'Emoji overview shown', '/');
+        }
+      }
+    }
+  }, [emojies]);
 
   useEffect(() => {
     if (fullscreenEmoji) {
