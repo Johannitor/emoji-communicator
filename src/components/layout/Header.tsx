@@ -14,7 +14,7 @@ export function Header() {
   return (
     <div className="h-16 w-full relative bg-white shadow">
       <div className="max-w-screen-lg mx-auto items-center h-full flex px-4">
-        {emoji && <DisplayEmoji emoji={emoji} className="h-10 mr-2" />}
+        {emoji && <DisplayEmoji emoji={emoji} className="h-10 mr-4" />}
         <span className="text-lg text-gray-900 font-bold tracking">
           Emoji Communicator
         </span>
