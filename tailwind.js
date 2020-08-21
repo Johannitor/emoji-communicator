@@ -299,11 +299,12 @@ module.exports = {
       screen: '100vh',
     }),
     // top, right, bottom, left
-    inset: {
+    inset: (theme) => ({
       '0': '0',
       '1/2': '50%',
       auto: 'auto',
-    },
+      ...theme('spacing'),
+    }),
     letterSpacing: {
       tighter: '-0.05em',
       tight: '-0.025em',
@@ -343,6 +344,7 @@ module.exports = {
       full: '100%',
       screen: '100vh',
       'screen-90': '90vh',
+      vmin: '100vmin',
     }),
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
@@ -357,6 +359,7 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
+      vmin: '100vmin',
       ...breakpoints(theme('screens')),
     }),
     minHeight: {
@@ -403,7 +406,7 @@ module.exports = {
       '11': '11',
       '12': '12',
     },
-    padding: (theme) => theme('spacing'),
+    padding: (theme) => ({ ...theme('spacing'), '100%': '100%' }),
     placeholderColor: (theme) => theme('colors'),
     placeholderOpacity: (theme) => theme('opacity'),
     space: (theme, { negative }) => ({

@@ -1,20 +1,12 @@
 import React from 'react';
+import './assets/main.css';
+import { EmojiTable } from './components/emoji-table/EmojiTable';
+import { emojiList } from './util/emoji/emoji-list.const';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-screen-lg mx-auto p-4">
+      <EmojiTable emojies={emojiList} />
     </div>
   );
 }
