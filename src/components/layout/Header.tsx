@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { randomArrayItem } from '../../util/array/randomArrayItem';
 import { emojiList } from '../../util/emoji/emoji-list.const';
 import { Emoji } from '../../util/emoji/emoji.type';
-import { randomArrayItem } from '../../util/randomArrayItem';
 import { DisplayEmoji } from '../emoji/DisplayEmoji';
 
 export function Header() {
