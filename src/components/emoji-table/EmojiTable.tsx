@@ -15,11 +15,31 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   }, [setFullscreenEmoji]);
 
   useEffect(() => {
-    if (!!fullscreenEmoji) {
+    if (fullscreenEmoji) {
       document.body.style.overflow = 'hidden';
+      window.history.pushState(
+        null,
+        `Emoji ${fullscreenEmoji.id} shown`,
+        `/${fullscreenEmoji.id}`
+      );
     } else {
       document.body.style.overflow = 'auto';
+      window.history.pushState(null, 'Emoji overview shown', '/');
     }
+
+    const popStateHandler = (e: PopStateEvent) => {
+      if (fullscreenEmoji) {
+        setFullscreenEmoji(null);
+      } else {
+        window.history.back();
+      }
+    };
+
+    window.addEventListener('popstate', popStateHandler);
+
+    return () => {
+      window.removeEventListener('popstate', popStateHandler);
+    };
   }, [fullscreenEmoji]);
 
   return (
