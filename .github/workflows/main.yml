@@ -18,6 +18,12 @@ jobs:
         run: |
           npm install
           npm run build
+          
+      - name: Copy index.html to 404.html
+        uses: canastro/copy-file-action@master
+        with:
+          source: "build/index.html"
+          target: "build/404.html"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.5.9
