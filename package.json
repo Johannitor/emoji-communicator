@@ -1,7 +1,12 @@
 {
-  "name": "jl-nvc",
+  "name": "emoji-communitator",
+  "author": {
+    "name": "Johann Lochbaum",
+    "email": "johannlochbaum@outlook.de"
+  },
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://johannitor.github.io/emoji-communicator",
   "dependencies": {
     "@types/node": "^12.12.54",
     "@types/react": "^16.9.46",
