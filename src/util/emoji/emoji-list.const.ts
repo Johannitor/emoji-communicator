@@ -5,39 +5,39 @@ const baseUrl =
 
 export const emojiList: Emoji[] = [
   {
-    id: 'smily_smile',
+    id: 'smiley_smile',
     src: baseUrl + 'smiling-face-with-smiling-eyes_1f60a.png',
   },
   {
-    id: 'smily_frown',
+    id: 'smiley_frown',
     src: baseUrl + 'white-frowning-face_2639.png',
   },
   {
-    id: 'smily_angry',
+    id: 'smiley_angry',
     src: baseUrl + 'pouting-face_1f621.png',
   },
   {
-    id: 'smily_shocked',
+    id: 'smiley_shocked',
     src: baseUrl + 'face-screaming-in-fear_1f631.png',
   },
   {
-    id: 'smily_hearts',
+    id: 'smiley_hearts',
     src: baseUrl + 'smiling-face-with-heart-shaped-eyes_1f60d.png',
   },
   {
-    id: 'smily_raised',
+    id: 'smiley_raised',
     src: baseUrl + 'face-with-one-eyebrow-raised_1f928.png',
   },
   {
-    id: 'smily_shush',
+    id: 'smiley_shush',
     src: baseUrl + 'face-with-finger-covering-closed-lips_1f92b.png',
   },
   {
-    id: 'smily_sleep',
+    id: 'smiley_sleep',
     src: baseUrl + 'sleeping-face_1f634.png',
   },
   {
-    id: 'smily_party',
+    id: 'smiley_party',
     src: baseUrl + 'face-with-party-horn-and-party-hat_1f973.png',
   },
   {
