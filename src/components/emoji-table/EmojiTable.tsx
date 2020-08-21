@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Emoji } from '../../util/emoji/emoji.type';
 import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
@@ -13,6 +13,14 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   const onDialogClose = useCallback(() => {
     setFullscreenEmoji(null);
   }, [setFullscreenEmoji]);
+
+  useEffect(() => {
+    if (!!fullscreenEmoji) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [fullscreenEmoji]);
 
   return (
     <>
