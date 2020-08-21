@@ -1,3 +1,20 @@
-#Non verbal communication page
+# Emoji Communication
 
-Website to provide the ability to talk through Emojis. Have fun!
+Simple app to provide non verbal communication through all beloved emojis! [View Page](https://johannitor.github.io/emoji-communicator/)
+
+## Used Technologies
+
+- [React](https://github.com/facebook/react)
+- Typescript
+- [TailwindCss](https://github.com/tailwindlabs/tailwindcss)
+- [date-fns](https://github.com/date-fns/date-fns)
+
+Hosted on Github Pages
+
+## Development
+
+`npm start` Creates tailwind styles and serves react application
+
+`npm run watch:css` Creates tailwind styles
+
+`npm run build` Builds production version of application
