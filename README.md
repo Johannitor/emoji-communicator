@@ -2,6 +2,8 @@
 
 Simple app to provide non verbal communication through all beloved emojis! [View Page](https://johannitor.github.io/emoji-communicator/)
 
+Uses Emojis from [Emojipedia](https://emojipedia.org/).
+
 ## Used Technologies
 
 - [React](https://github.com/facebook/react)
