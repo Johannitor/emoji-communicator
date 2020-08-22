@@ -1,4 +1,5 @@
 import React from 'react';
+import useEmojiVariant from '../../hooks/useEmojiVariant';
 import { Emoji } from '../../util/emoji/emoji.type';
 
 type DisplayEmojiProps = {
@@ -7,5 +8,14 @@ type DisplayEmojiProps = {
 };
 
 export function DisplayEmoji({ emoji, ...props }: DisplayEmojiProps) {
-  return <img {...props} src={emoji.src} alt="" loading="lazy" />;
+  const { variant } = useEmojiVariant();
+
+  return (
+    <img
+      {...props}
+      src={(emoji.altSrc && emoji.altSrc[variant]) || emoji.src}
+      alt=""
+      loading="lazy"
+    />
+  );
 }
