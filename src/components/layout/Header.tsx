@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import useEmojiVariant from '../../hooks/useEmojiVariant';
 import { emojiList } from '../../util/emoji/emoji-list.const';
 import { Emoji, EmojiVariants } from '../../util/emoji/emoji.type';
-import { emojiVariantSelectOptions } from '../../util/emoji/variantSelectOptions';
 import { randomBetween } from '../../util/math/random';
 import { DisplayEmoji } from '../emoji/DisplayEmoji';
+import { VariantSelect } from '../emoji/VariantSelect';
 
 export function Header() {
   const [index, setIndex] = useState<number>(0);
   const [emoji, setEmoji] = useState<Emoji>();
-  const { variant, setVariant } = useEmojiVariant();
+  const { variant } = useEmojiVariant();
 
   useEffect(() => {
     setIndex(randomBetween(0, emojiList(EmojiVariants.APPLE).length));
@@ -28,18 +28,7 @@ export function Header() {
             Emoji Communicator
           </span>
         </div>
-        <select
-          className="p-2 border border-gray-500 rounded w-32"
-          value={variant}
-          onChange={(e) => {
-            setVariant(Number(e.target.value));
-          }}>
-          {emojiVariantSelectOptions.map((variant) => (
-            <option key={variant.value} value={variant.value}>
-              {variant.label}
-            </option>
-          ))}
-        </select>
+        <VariantSelect />
       </div>
     </div>
   );
