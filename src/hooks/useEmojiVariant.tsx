@@ -1,5 +1,5 @@
 import React, { createContext, ReactChild, useContext, useState } from 'react';
-import { EmojiVariants } from '../util/emoji/emoji-list.const';
+import { EmojiVariants } from '../util/emoji/emoji.type';
 
 type provideEmojiVariant = {
   variant: EmojiVariants;

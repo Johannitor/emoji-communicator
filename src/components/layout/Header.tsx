@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useEmojiVariant from '../../hooks/useEmojiVariant';
 import { emojiList } from '../../util/emoji/emoji-list.const';
-import { Emoji } from '../../util/emoji/emoji.type';
+import { Emoji, EmojiVariants } from '../../util/emoji/emoji.type';
 import { randomBetween } from '../../util/math/random';
 import { DisplayEmoji } from '../emoji/DisplayEmoji';
 
@@ -11,7 +11,7 @@ export function Header() {
   const { variant } = useEmojiVariant();
 
   useEffect(() => {
-    setIndex(randomBetween(0, emojiList().length));
+    setIndex(randomBetween(0, emojiList(EmojiVariants.APPLE).length));
   }, []);
 
   useEffect(() => {
