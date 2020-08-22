@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { ProvideEmojiVariant } from './hooks/useEmojiVariant';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProvideEmojiVariant>
+      <App />
+    </ProvideEmojiVariant>
   </React.StrictMode>,
   document.getElementById('root')
 );

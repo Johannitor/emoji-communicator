@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useEmojiVariant from '../../hooks/useEmojiVariant';
 import { randomArrayItem } from '../../util/array/randomArrayItem';
 import { emojiList } from '../../util/emoji/emoji-list.const';
 import { Emoji } from '../../util/emoji/emoji.type';
@@ -6,9 +7,10 @@ import { DisplayEmoji } from '../emoji/DisplayEmoji';
 
 export function Header() {
   const [emoji, setEmoji] = useState<Emoji>();
+  const { variant } = useEmojiVariant();
 
   useEffect(() => {
-    setEmoji(randomArrayItem(emojiList()));
+    setEmoji(randomArrayItem(emojiList(variant)));
   }, []);
 
   return (
