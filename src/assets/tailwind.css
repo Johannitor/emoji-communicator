@@ -49,7 +49,8 @@
   border-left-color: transparent;
   /* border-top-color: black;
   border-right-color: black; */
-  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  transition: border-color 0.2s ease-out, width 0.25s linear,
+    height 0.25s linear 0.25s;
 }
 
 .draw.active::after {
@@ -58,8 +59,8 @@
   border-right-color: transparent;
   /* border-bottom-color: black;
   border-left-color: black; */
-  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
-    height 0.25s ease-out 0.75s;
+  transition: border-color 0s linear 0.5s, width 0.25s linear 0.5s,
+    height 0.25s linear 0.75s;
 }
 
 @tailwind utilities;
