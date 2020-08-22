@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import useEmojiVariant from '../../hooks/useEmojiVariant';
-import { randomArrayItem } from '../../util/array/randomArrayItem';
 import { emojiList } from '../../util/emoji/emoji-list.const';
 import { Emoji } from '../../util/emoji/emoji.type';
+import { randomBetween } from '../../util/math/random';
 import { DisplayEmoji } from '../emoji/DisplayEmoji';
 
 export function Header() {
+  const [index, setIndex] = useState<number>(0);
   const [emoji, setEmoji] = useState<Emoji>();
   const { variant } = useEmojiVariant();
 
   useEffect(() => {
-    setEmoji(randomArrayItem(emojiList(variant)));
+    setIndex(randomBetween(0, emojiList().length));
   }, []);
+
+  useEffect(() => {
+    setEmoji(emojiList(variant)[index]);
+  }, [variant, index]);
 
   return (
     <div className="h-16 w-full relative bg-white shadow">
