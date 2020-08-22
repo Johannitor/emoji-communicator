@@ -4,10 +4,10 @@ import { EmojiCard } from './EmojiCard';
 import { FullscreenEmoji } from './FullscreenEmoji';
 
 type EmojiTableProps = {
-  emojies: Emoji[];
+  emojis: Emoji[];
 };
 
-export function EmojiTable({ emojies }: EmojiTableProps) {
+export function EmojiTable({ emojis }: EmojiTableProps) {
   const [fullscreenEmoji, setFullscreenEmoji] = useState<Emoji | null>(null);
 
   const onDialogClose = useCallback(() => {
@@ -44,7 +44,7 @@ export function EmojiTable({ emojies }: EmojiTableProps) {
   return (
     <>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 md:gap-4">
-        {emojies.map((emoji) => (
+        {emojis.map((emoji) => (
           <EmojiCard
             key={emoji.id}
             emoji={emoji}
