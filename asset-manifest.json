@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/emoji-communicator/static/css/main.7deb82fd.chunk.css",
-    "main.js": "/emoji-communicator/static/js/main.22de4027.chunk.js",
-    "main.js.map": "/emoji-communicator/static/js/main.22de4027.chunk.js.map",
+    "main.css": "/emoji-communicator/static/css/main.069958e2.chunk.css",
+    "main.js": "/emoji-communicator/static/js/main.0ca8bc9d.chunk.js",
+    "main.js.map": "/emoji-communicator/static/js/main.0ca8bc9d.chunk.js.map",
     "runtime-main.js": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js",
     "runtime-main.js.map": "/emoji-communicator/static/js/runtime-main.ed2d8a21.js.map",
-    "static/js/2.5c0c368c.chunk.js": "/emoji-communicator/static/js/2.5c0c368c.chunk.js",
-    "static/js/2.5c0c368c.chunk.js.map": "/emoji-communicator/static/js/2.5c0c368c.chunk.js.map",
+    "static/js/2.2c73fda7.chunk.js": "/emoji-communicator/static/js/2.2c73fda7.chunk.js",
+    "static/js/2.2c73fda7.chunk.js.map": "/emoji-communicator/static/js/2.2c73fda7.chunk.js.map",
     "index.html": "/emoji-communicator/index.html",
-    "precache-manifest.ae6b5eef3058368ca679a831d81ce5d4.js": "/emoji-communicator/precache-manifest.ae6b5eef3058368ca679a831d81ce5d4.js",
+    "precache-manifest.cb453105486e0ef9634bd525fd37f444.js": "/emoji-communicator/precache-manifest.cb453105486e0ef9634bd525fd37f444.js",
     "service-worker.js": "/emoji-communicator/service-worker.js",
-    "static/css/main.7deb82fd.chunk.css.map": "/emoji-communicator/static/css/main.7deb82fd.chunk.css.map",
-    "static/js/2.5c0c368c.chunk.js.LICENSE.txt": "/emoji-communicator/static/js/2.5c0c368c.chunk.js.LICENSE.txt"
+    "static/css/main.069958e2.chunk.css.map": "/emoji-communicator/static/css/main.069958e2.chunk.css.map",
+    "static/js/2.2c73fda7.chunk.js.LICENSE.txt": "/emoji-communicator/static/js/2.2c73fda7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ed2d8a21.js",
-    "static/js/2.5c0c368c.chunk.js",
-    "static/css/main.7deb82fd.chunk.css",
-    "static/js/main.22de4027.chunk.js"
+    "static/js/2.2c73fda7.chunk.js",
+    "static/css/main.069958e2.chunk.css",
+    "static/js/main.0ca8bc9d.chunk.js"
   ]
 }
