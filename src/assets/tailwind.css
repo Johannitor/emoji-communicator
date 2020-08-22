@@ -2,4 +2,64 @@
 
 @tailwind components;
 
+/* Source: https://codepen.io/giana/pen/yYBpVY/ */
+.draw {
+  @apply rounded;
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+
+.draw::before,
+.draw::after {
+  @apply rounded;
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.draw::before {
+  top: 0;
+  left: 0;
+}
+
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+
+.draw.active {
+  color: black;
+}
+
+.draw.active::before,
+.draw.active::after {
+  width: 100%;
+  height: 100%;
+}
+
+.draw.active::before {
+  @apply border-orange-600;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  /* border-top-color: black;
+  border-right-color: black; */
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+.draw.active::after {
+  @apply border-orange-600;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  /* border-bottom-color: black;
+  border-left-color: black; */
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
+}
+
 @tailwind utilities;
