@@ -8,7 +8,7 @@ export function Header() {
   const [emoji, setEmoji] = useState<Emoji>();
 
   useEffect(() => {
-    setEmoji(randomArrayItem(emojiList));
+    setEmoji(randomArrayItem(emojiList()));
   }, []);
 
   return (

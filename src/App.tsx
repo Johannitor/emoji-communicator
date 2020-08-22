@@ -11,7 +11,7 @@ function App() {
     <div>
       <Header />
       <div className="max-w-screen-lg mx-auto p-4">
-        <EmojiTable emojies={emojiList} />
+        <EmojiTable emojies={emojiList()} />
       </div>
       <Footer />
       <WebInstallPrompt />
