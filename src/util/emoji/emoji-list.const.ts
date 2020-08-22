@@ -161,6 +161,14 @@ export const emojiList: (variant: EmojiVariants) => Emoji[] = (variant) => {
       src: emojiSrc('crystal-ball_1f52e.png'),
     },
     {
+      id: 'magic_wand',
+      src: baseUrl + 'emojipedia/240/magic-wand_1fa84.png',
+      altSrc: {
+        [EmojiVariants.TWITTER]: emojiSrc('magic-wand_1fa84.png'),
+        [EmojiVariants.OPENMOJI]: emojiSrc('magic-wand_1fa84.png'),
+      },
+    },
+    {
       id: 'telephone',
       src: emojiSrc('telephone-receiver_1f4de.png'),
     },
@@ -188,6 +196,19 @@ export const emojiList: (variant: EmojiVariants) => Emoji[] = (variant) => {
     {
       id: 'wtf',
       src: emojiSrc('exclamation-question-mark_2049.png'),
+    },
+    {
+      id: 'star',
+      src: emojiSrc('white-medium-star_2b50.png'),
+      altSrc: {
+        [EmojiVariants.GOOGLE]: emojiSrc('star_2b50.png'),
+        [EmojiVariants.TWITTER]: emojiSrc('star_2b50.png'),
+        [EmojiVariants.OPENMOJI]: emojiSrc('star_2b50.png'),
+      },
+    },
+    {
+      id: 'cant_hear',
+      src: emojiSrc('hear-no-evil-monkey_1f649.png'),
     },
   ];
 };
