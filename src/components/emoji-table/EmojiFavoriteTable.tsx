@@ -29,7 +29,7 @@ export function EmojiFavoriteTable({ emojis }: EmojiFavoriteTableProps) {
         </span>
       </span>
       <span className="text-gray-500 text-center">
-        You can add emojis by holding down one for 1 second{' '}
+        You can add emojis by holding them down for one second{' '}
         <span role="img" aria-label="press-down">
           👇
         </span>

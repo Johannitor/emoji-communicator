@@ -87,6 +87,7 @@ export function EmojiCard({ emoji, onClick }: EmojiCardProps) {
           e.preventDefault();
           handleCursorUp();
         }}>
+        <div className="w-full h-full absolute top-0 left-0 z-50 select-none"></div>
         <DisplayEmoji emoji={emoji} className="pb-8 h-full" />
         <span className="font-semibold text-gray-600 text-sm absolute bottom-2 truncate max-w-full px-2">
           {emoji.id}
