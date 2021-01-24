@@ -4,12 +4,15 @@ import App from './App';
 import { ProvideEmojiFavorites } from './hooks/useEmojiFavorites';
 import { ProvideEmojiVariant } from './hooks/useEmojiVariant';
 import * as serviceWorker from './serviceWorker';
+import { ProvideEmojiFullscreen } from './hooks/useEmojiFullscreen';
 
 ReactDOM.render(
   <React.StrictMode>
     <ProvideEmojiVariant>
       <ProvideEmojiFavorites>
-        <App />
+        <ProvideEmojiFullscreen>
+          <App />
+        </ProvideEmojiFullscreen>
       </ProvideEmojiFavorites>
     </ProvideEmojiVariant>
   </React.StrictMode>,
